@@ -1,0 +1,81 @@
+<div class="header">
+  <h1>Expense Tracker</h1>
+  <div class="user-icon">
+    <img src="path/to/icon.png" alt="User Icon">
+  </div>
+</div>
+
+<div class="button-group">
+  <a href="view-expense">
+    <button type="button">View Expenses</button>
+  </a>
+  <div class="dropdown">
+    <button class="add-new">+ Add New</button>
+    <div class="dropdown-content">
+      <a href="add-expense-form">Add New Asset</a>
+      <a href="budget-form">Add New Budget</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="selector-container">
+  <div class="user-selector">
+    <label for="userSelect">Select User:</label>
+    <select id="userSelect" (change)="onUserChange($event)">
+      <option value="">Select User</option>
+      <option *ngFor="let user of users" [value]="user.id">
+        {{ user.firstName }}
+      </option>
+    </select>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="container">
+  <div class="monthly-expenses">
+    <h2>Expenses by Category</h2>
+    <div class="chart pie">
+      <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="donutChartOptions">
+      </highcharts-chart>
+    </div>
+    <div class="month-selector">
+      <label for="monthSelect">Select Month:</label>
+      <select id="monthSelect" (change)="onMonthChange($event)">
+        <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="monthly-expenses">
+    <h2>Monthly Expenses</h2>
+    <div class="chart line">
+      <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="lineChartOptions"
+        style="width: 100%; height: 400px; display: block;">
+      </highcharts-chart>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="expenses-container">
+  
+      <h2>Total EXPENSES</h2>
+      <div class="expense-cards">
+          <div class="expense-card">
+              <p class="expense-amount">₹{{totalExpenses}}</p>
+              <p>Expenses</p>
+          </div>
+      </div>
+  </div>
+
+

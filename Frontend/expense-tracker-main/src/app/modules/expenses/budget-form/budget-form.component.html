@@ -1,0 +1,41 @@
+<div class="background">
+    <h2>ADD BUDGET</h2>
+    <form [formGroup]="budgetForm" (ngSubmit)="onSubmit()">
+  
+      <div>
+        <label for="user">User:</label>
+        <select formControlName="userId" id="user">
+          <option *ngFor="let user of users" [value]="user.id">
+            {{ user.firstName }}
+          </option>
+        </select>
+      </div>
+  
+     
+      <div>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" formControlName="amount" required>
+        <div *ngIf="budgetForm.get('amount')?.invalid && budgetForm.get('amount')?.touched">
+          Amount is required and must be positive
+        </div>
+      </div>
+ 
+      <div>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" formControlName="startDate" required>
+        <div *ngIf="budgetForm.get('startDate')?.invalid && budgetForm.get('startDate')?.touched">
+          Start Date is required
+        </div>
+      </div>
+  
+      <div>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" formControlName="endDate" required>
+        <div *ngIf="budgetForm.get('endDate')?.invalid && budgetForm.get('endDate')?.touched">
+          End Date is required
+        </div>
+      </div>
+  
+      <button type="submit">Add Budget</button>
+    </form>
+  </div>
