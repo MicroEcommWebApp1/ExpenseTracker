@@ -1,0 +1,192 @@
+/* General Page Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  select#selectedUserId {
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin: 10px 0;
+  }
+  
+  select#selectedUserId:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* AG Grid Table Styling */
+  .ag-theme-alpine {
+    height: 500px;
+    width: 100%;
+    border: 1px solid #552e2e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ag-header-cell {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .ag-header-cell-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .ag-header-cell-label:hover {
+    color: #0056b3; /* Darker blue text color on hover */
+    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+  }
+  
+  .ag-header-cell-label .ag-header-cell-text {
+    font-size: 1.1rem;
+  }
+  
+  .ag-cell {
+    padding: 2px; /* Increased padding for taller cells */
+    font-size: 1rem;
+    border-bottom: 1px solid #f1f1f1;
+    min-height: 80px; /* Set a minimum height for cells */
+  }
+  
+  .ag-row {
+    transition: background-color 0.3s;
+  }
+  
+  .ag-row:hover {
+    background-color: transparent; /* No background color on hover */
+  }
+  
+  .ag-row-selected {
+    background-color: #cce5ff !important;
+  }
+  
+  /* Filter Icon Color */
+  .ag-header-cell .ag-header-icon {
+    color: #000; /* Default filter icon color */
+  }
+  
+  .ag-header-cell .ag-header-icon.active {
+    color: #000; /* Filter icon color when active */
+  }
+  
+  /* Prevent Screen from Turning White on Filter Click */
+  .ag-filter {
+    background-color: transparent !important; /* Override any default white background */
+  }
+  
+  /* Button Styles */
+  .btn {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+  }
+  
+  .btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    .ag-theme-alpine {
+      height: 400px;
+    }
+  }
+  
+  /* Additional Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user-icon img {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .monthly-expenses .chart {
+    margin: 20px 0;
+  }
+  
+  .expenses-container {
+    text-align: center;
+  }
+  
+  .expense-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  

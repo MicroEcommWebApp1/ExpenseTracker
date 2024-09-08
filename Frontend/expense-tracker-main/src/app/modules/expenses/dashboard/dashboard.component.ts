@@ -12,7 +12,7 @@ import { UserService } from '../../../services/user.service';
 export class DashboardComponent implements OnInit {
   users: any[] = [];
   selectedUserId: number | null = null;
-  selectedMonth: string = 'All'; // Default month is 'All'
+  selectedMonth: string = 'All'; 
   totalExpenses: number = 0;
   donutChartOptions: any;
   lineChartOptions: any;
@@ -46,8 +46,8 @@ export class DashboardComponent implements OnInit {
     if (userId !== null) { 
       this.expenseService.getExpensesByUserId(userId).subscribe((expenses: ExpenseResponseDTO[]) => {
         this.totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0);
-        this.expenses = expenses; // Store expenses for filtering
-        this.updateDonutChart(); // Updated to use stored expenses
+        this.expenses = expenses; 
+        this.updateDonutChart(); 
         this.updateLineChart(expenses);
       });
     }
@@ -91,7 +91,7 @@ export class DashboardComponent implements OnInit {
       },
       title: {
        
-        useHTML: true, // Allows using HTML in the title
+        useHTML: true, 
         text: `<div style="text-align: center;">
         <span style="font-size: 16px; color: #888;">Overall / Monthly Expenses</span><br>
         <br>
@@ -109,7 +109,7 @@ export class DashboardComponent implements OnInit {
         pie: {
           innerSize: '88%',
           dataLabels: {
-            enabled: true
+            enabled: true 
           },
           animation: {
             duration: 2000, 

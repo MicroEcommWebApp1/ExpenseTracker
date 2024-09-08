@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { ExpensesModule } from './modules/expenses/expenses.module';
-
+import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HighchartsChartModule } from 'highcharts-angular';
 
@@ -20,6 +20,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     CoreModule,
     ExpensesModule, 
     HighchartsChartModule,
+    AgGridModule,
     HttpClientModule
   ],
   providers: [
